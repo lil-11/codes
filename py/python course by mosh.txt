@@ -1,0 +1,477 @@
+python course by mosh
+=====================
+Python is case sensitive
+The interpreter intepretes the code line by line from the top to instructions that the computer can understand
+A string (str) is represented using single/double quotes i.e
+print("python") OR print('python')
+
+Variables
+==========
+They're used to temporaly store data in the computer's memory. Types of variables are;
++ integer
++ float
++ string
++ boolean
+
+Getting input
+=============
+Use 'input()' to get input from user. e.g
+name = input ("What's your name? ") ----(1)
+print("Hi " + name) ----(2) 
+(1)---the name entered is stored in the 'name' variable
+(2)---the plus sign combines(concactinates) the 'Hi' to the name variable
+
+Type conversion
+===============
+code---(3) {
+	birth_year = input('Birth year: ')
+	age = 2023 - birth_year
+	print(age)
+}
+code (3) will show an error message since the data type was not converted from string to 'int or float'
+Here's the correct code 
+code---(4) {
+	birth_year = input('Birth year: ')
+	age = 2023 - int(birth_year)
+	print(age)
+}
+NB
+==
+When using the 'input' function, you'll always get a string thus, if you're dealing with a numerical value, convert to either integer/floating point number
+
+Strings
+=======
+Use the following syntax below to define a multi line string. Encode it with tripple single codes
+code ---(5) {
+	string_name = '''
+	#write your
+	#multiline string here
+	#it can be an email
+
+	'''
+
+	print(string_name)
+}
+Python has negative index i.e after the the first letter of a string which is index zero, -1 represents the last letter i.e
+code---(6) {
+	string_name = "Python For Beginners"
+	print(course[-1])
+}
+from (6) above 'print(course[-1])' represents the last letter of the string which is 's'
+
+Formatted strings
+=================
+e.g
+code---(7) {
+	first = 'Lil'
+	last = 'Tall'
+	message = first + ' [' + last +'] is a coder '
+	print(message)
+}
+code 7 prints out 'Lil [Tall] is a coder'
+
+formatted string makes it easier to visualize the ouput. It starts with an f, then use curly braces to dynamically insert values in the string
+code---(8) {
+	first = 'Lil'
+	last = 'Tall'
+	message = f "{first} {last} is a coder"
+	print(message)
+	#this prints Lil Tall is a coder
+}
+
+Arithmetic operators
+====================
+addiition (+)
+subtraction (-)
+multiplication (*)
+division ('//'-> output as float, '/'-> output as int)
+modulle (%)
+exponent (**)
+augmented assignment operator (+=, -=, *=, /=)
+
+Operator presedence
+===================
+exponentiation -> (multiplication/division) -> (addition/subtraction)
+NB
+==
+use parentaces to change the presedence
+
+Maths Function
+==============
+given that x = 2.9
+use 'round(x)' to round up
+use 'abs(x)' to get the absolute value
+to use more maths module impot a module by using the header 'import math'
+
+if statements/comparism operators
+=================================
+comparism operators
+data:
+	if it's a hot, print it's hot, drink lot of water
+	otherwise if it's cold, print it's cold, wear warm clothes
+	otherwise, print it's a lovely day
+code---(9) {
+	temp = float(input("Enter the whether's temperature: ")) 
+	if temp >= 30:
+		print("It's a hot day")
+		print("Drink alot of water")
+	elif temp <= 15:
+		print("It's a cold day")
+		print("Wear warm clothes")
+	else:
+		print("It's a beautiful day")
+}
+
+Logical operators
+=================
+there are 3; AND --> and --> if all statements are true
+             OR  --> or --> if one or more is true
+             NOT --> not --> inverts 
+code---(10) {
+	high_income = True
+	good_credit = True
+	if high_income and good_credit:
+		print("Eligible for loan")
+	else:
+		print("Not eligible for loan")
+}
+
+While loops
+===========
+these are used to execute a block of code multiple times
+syntax{
+	while condition:
+	...
+}
+below is a guesing game
+code---(11) {
+	#this game gives the user 3 trys to guess the right number
+secret_number = 9
+guess_count = 0
+guess_limit = 3
+while guess_count < guess_limit:
+    guess = int(input("Guess: "))
+    guess_count += 1
+    if guess == secret_number:
+        print("You won!")
+        break
+else:
+    print("You failed!")
+}
+
+for loops
+=========
+used to iterate over items of collection
+syntax {
+	for item in "string_name":
+		print(item)
+}
+list are items of thesame datatypes
+list can be defined using square brackets
+syntax {
+	for item in []:
+		print(item)
+}
+e.g
+code---(12) {
+	for item in ['Mosh', 'John', 'Sarah']:
+    	print(item)
+}
+code---(13) {
+	for item in [0, 1, 2, 3, 4,]:
+    print(item)
+}
+T iterate over a large list of numbers, use the 'range()' function. the range function creates a function that we can iterate over, whereby in each iteration, the object shows a new number
+e.g
+modifying (13) {
+	for item in range(5):
+    print(item)
+}
+
+Nested loops
+============
+this means adding one loop in another
+
+Lists
+=====
+u can acces an individual elements in a list using the index
+names = ["John", "Mary", "Ash", "Bless", "Ngum", "Ryan"]
+e.g 
+from the list above, print(names[1]) = John
+                     print(names[-1]) = Bless
+use column to select a range of items in a list 
+e.g print(names[4:]) = ["Ngum", "Ryan"] --> last two
+    print(names[2:4]) = ["Ash", "Bless"] --> items in between
+You can edit an item in a list
+e.g  names[1] = "May"
+
+2D List
+=======
+they are used in data science and machine learning
+consider the following list below int the form of a matrix
+matrix = [
+	[1, 2, 3,],
+	[4, 5, 6,],
+	[7, 8, 9,]
+]
+from the list the first item can be called using 
+==> "matrix[0][1]" which will be equal to 1 and so on
+using nested loop to iterate over all the items in the matrix;
+code---(14) {
+	matrix = [
+		[1, 2, 3,],
+		[4, 5, 6,],
+		[7, 8, 9,]
+	]
+	for row in matrix:
+		for item in row:
+			print(item)
+}
+
+List Methods
+============
+comsider the list 
+numbers = [5, 2, 1, 7, 4]
++ to add an element at the end of the list use ".append" 
+e.g "numbers.append(10)", will add 20 at the end of the list
++ to add an element anywhere in the list, use "numbers.insert(val1,val2)", where val1 is the index of the element and val2 is the element
+e.g "numbers.insert(3,10)", will replace 7 with 10
++ to remove an item from the list, use ".remove"
+e.g "numbers.remove(5) will remove 5
++ to remove all the items in a list, use ".clear" Method
+e.g numbers.clear() will empty the list
++ use ".pop" method to remove the last item in the list
+e.g "numbers.pop() will remove 4
++ use ".index" method to check for the existence of an item in the list
+e.g "numbers.index(1) will give 2 whiile "numbers.index(7) will give an error since element does not exist
+
+code---(15) {
+	#the code below remove duplicates in a list
+	numbers = [2, 2, 4, 6, 3, 4, 6, 1, 7, 3]
+	uniques = []
+	for number in numbers:
+		if number not in uniques:
+			uniques.append(number)
+	print(uniques)
+}
+
+Tuples
+=======
+they are similar to list only that u can't add/modify/remove items. Thus they're immutable
+we use parenthesis to define tuples. The only methods in tuples are count and index
+individual items can be accessed using square brackets
+code---(16) {
+	#this is a tuple
+	numbers = (1, 2, 3, 4, 5)
+	print(numbers[2])
+}
+
+Unpacking
+==========
+consider the tuple below
+code---(17) {
+coordinates = (1, 2, 3)
+#we can add the following numbers after asigning to value x, y, and z i.e
+x = coordinates[0]
+y = coordinates[1]
+z = coordinates[2]
+a = x + y + z
+print(a)
+}
+modifying code(17) with Unpacking, it'll give thesame result i.e
+{
+coordinates = (1, 2, 3)
+x, y, z = coordinates
+a = x + y + z
+print(a)
+}
+thesame can be used in list
+
+Dictionaries
+=============
+they are used to store information that come as key value pairs i.e
+e.g consider a customer that has the following;
+	name: John Smith
+	Email: john@example.com
+	phone: 123
+where name, email, phone are key value pairs, assiociated with a value
+thus we can use a dictionary here
+NB: Each key in a dictionary should be unique
+    If you try to print out a key that does not exist, you either get; 
+		-- a key error, if you used "print(variable_name["keyname"]) OR
+		-- a "None" value, if you used "print(variable_name.get("keyname"))
+		-- a default value, if given. To give a default value, u can use the syntax
+			==> print(variable_name.get("keyname", "default_value"))
+	You can update a value in a dictionary using the syntax;
+		==> variable_name["keyname"] = "new_value"
+	You can dynamically add a new key using the syntax
+		==> variable_name["new_key"] = "new_value"
+code---(18) {
+	#defining a dictionary
+	customer = {
+		"name": "John Smith",
+		"age": 18,
+		"is_verified": True
+	}
+	#Each item in the dictionary cam be accessed using square brackets i.e
+	print(customer["name"]) # =="John Smith"	
+}
+code ---(19) {
+	#the code below translates the digits entered by user to words
+	phone = input("Enter digits: ")
+	digits_mapping = {
+		"0": "Zero",
+		"1": "One",
+		"2": "Two",
+		"3": "Three",
+		"4": "Four",
+		"5": "Five",
+		"6": "Six",
+		"7": "Seven",
+		"8": "Eight",
+		"9": "Nine",
+	}
+	output = ""
+	for ch in phone:
+		output += digits_mapping.get(ch, "!") + " "
+	print(output)
+}
+
+another use of dictionaries
+code ---(20) {
+	message = input("> ")
+words = message.split(" ")
+emojis = {
+    ":)": "😊",
+    ":(": "😔"
+}
+output = ""
+for word in words:
+    output += emojis.get(word, word) + " "
+print(output)
+}
+
+Functions
+==========
+a function is a container that can contain few lines of code
+when building large applications, use functions to break your code into small pieces
+below is an example of a function
+code---(21) {
+	#using functions
+def greetings():
+    print("Hello")
+    print("Welcome") #for best practice, skip two lines after the function
+    
+    
+print("Start")
+greetings()
+print("Finish")
+}
+NB: define a function before calling
+
+Parameters and arguments
+========================
+Parameters are passed during the definition of function while Arguments are passed during
+the function call.
+example:
+	code---(22a) {
+		#here a and b are parameters
+		def add(a,b): #//function definition
+		return a+b
+		#12 and 13 are arguments
+		#function call
+		result=add(12,13)
+		print(result)
+	}
+NB: Parameters are place holders in an function, used to recieve information
+    Arguement is the actual piece of information suppplied to the function
+code ---(22) {
+	#using functions
+def greetings(name):
+    print(f"Hello {name}!")
+    print("Welcome") #for best practice, skip two lines after the function
+    
+	
+print("Start")
+greetings("John")
+greetings("Mary")
+}
+Use key word aguements to increase the redability of your code. For
+If your mixing positional arguements and keyword arguments, use keyword arguments after positional arguments 
+  
+Return statements
+==================
+code ---(23) {
+	#using return statements to do square root
+def square(number):
+    return number * number
+name = float(input("Enter number: "))
+result = square(name)
+print(result)
+}
+
+Exceptions
+===========
+here we'll be learning debugging
+when you write codes and users try to enter values that do not correspond to the code, we have to write some exceptions so that the code(app) does not crash or show error messages when trying to run
+we use "try except" to handle these errors
+some common errors are;
+	AttributeError
+	ValueError
+	ZeroDivisionError
+below is a simple example
+
+code---(24) {
+	try:
+    age = int(input("Age: "))
+    income = 20000
+    risk = income / age
+    print(age)
+except ZeroDivisionError:
+    print("Age cannot be zero. Enter a valid age")
+except ValueError:
+    print("Invalid age")
+}
+
+Comments
+=========
+comments are used to add notes to our program.
+They are used to document the code. Comments should be dynamic
+They should be used to explain hows and whys.
+there are two types of comments;
+	single line comments, which begins with #
+	multi-line comments, which begins with ''' and ends with '''
+
+Classes
+========
+they are used to define new datatypes which can be used to define new methods
+when naming classes, capitalise the first letter of each word(Pascal Naming Convention)
+when you create a class, you define its new types, then create new objects
+an object is an instance of a class. a class just defines the blueprint for creating an object
+apart from methods, classes can have attributes which are like variables that belong to a particular object
+e.g
+code---(25) {
+	class Point:
+    def move(self):
+        print("Move")
+        
+    def draw(self):
+        print("Draw")
+        
+        
+point1 = Point()
+point1.x = 10
+point1.y = 20
+print(point1.x)
+point1.draw()
+}
+
+Constructors
+=============
+a constructure is a function called when creating an object
+
+
+
+
+
+

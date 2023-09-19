@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            UBER
+        </title>
+        <style>
+            .location {
+                padding-left: 10px;
+                border-radius: 5px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                border: 1px solid rgb(206, 198, 198);
+                color: rgb(206, 198, 198);  
+                padding-right: 100px;
+                background-color: #F0F0F0;
+            }
+            .destination {
+                padding-left: 10px;
+                border-radius: 5px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                border: 1px solid rgb(206, 198, 198);
+                color: rgb(206, 198, 198); 
+                margin-top: 0px;  
+                padding-right: 100px;
+                background-color: #F0F0F0;
+            }
+            .ride {
+                font-size: 35px;
+                color: black;
+                font-family: Arial;
+                margin-bottom: 0px;
+            }
+            .now {
+                background-color: black;
+                color: white;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                padding-left: 20px;
+                padding-right: 20px;
+                border: none;
+                margin-right: 7px;
+                cursor: pointer;
+            }
+            .now:active {
+                background-color: #F0F0F0;
+                color: black;
+            }
+            .later {
+                cursor: pointer;
+                color: black;
+                padding-top: 11px;
+                padding-bottom: 11px;
+                border: none;
+                padding-left: 13px;
+                padding-right: 13px;
+                border-radius: 4px
+            }
+            .later:active {
+                color: white;
+                background-color: black;
+            }
+        </style>
+    </head>
+    <body>
+        <p class="ride">
+            Request a ride now
+        </p>
+
+        <p>
+            <input type="text" class="location" placeholder="Enter pickup location">
+        </p>
+
+        <p>
+            <input type="text" class="destination" placeholder="Enter destination">
+        </p>
+
+        <p>
+            <button class="now">
+                Request now
+            </button>
+            <button class="later">
+                Schedule for later
+            </button>
+        </p>
+    </body>
+</html>
