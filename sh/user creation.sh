@@ -1,5 +1,5 @@
 #!/bin/bash
-# Author: Karlson
+# Author: Koh Karlson
 # Email: kohkarlson@gmail.com
 # This script creates a new user and adds them to a particular group
 
